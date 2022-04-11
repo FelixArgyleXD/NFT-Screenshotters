@@ -1,4 +1,181 @@
+<header>
+    <div class="container">
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="acc.html">Accomplishments</a></li>
+          <li><a href="cal.html">Calender</a></li>
+          <li><a href="contact-info.html">Contact Info</a></li>
+          <li><a href="show.html">2022 Shows</a></li>
+          <li><a href="qna.html">QNA</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
+
 <style>
+
+ @mixin angle($pseudo, $flip: false, $angle: 1.5deg)
+
+  @if $pseudo == 'before' or $pseudo == 'after' or 
+  $pseudo == 'both' {
+    position: relative;
+    z-index: 1;
+    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+
+  #{$selector} {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+
+@if $pseudo == 'before' {
+    #{$selector} {
+      top: 0;
+
+       @if $flip {
+        transform: skewY($angle * -1);
+        transform-origin: 0 0;
+      } 
+      @else {
+         transform: skewY($angle);
+         transform-origin: 100% 0;
+        }
+      }
+    }
+
+@if $pseudo == 'after' {
+      #{$selector} {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 100%;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+
+@if $pseudo == 'both' {
+  
+  &:before {
+    top: 0;
+
+  @if $flip {
+    transform: skewY($angle * -1);
+    transform-origin: 0 0;
+    } 
+   @else {
+     transform: skewY($angle);
+     transform-origin: 100% 0;
+        }
+      }
+
+&:after {
+  bottom: 0;
+
+@if $flip {
+  transform: skewY($angle);
+  transform-origin: 0 0;
+  } 
+@else {
+  transform: skewY($angle * -1);
+  transform-origin: 100%;
+        }
+      }
+    }
+  }
+}
+
+.edge--both {
+  @include angle(both);
+}
+
+.-red {
+  background: red;
+}
+
+.block {
+  
+}
+  
+body {
+	margin: 0;
+	background: white;
+	font-family: Playfair-Display;
+	font-weight: 800;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+  background: #EF0000;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+ 
+nav {
+  float: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 80px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  position: relative;
+  
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 200ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
 a {
     color:#DD3333;
     text-decoration: none;
@@ -13,12 +190,12 @@ a {
   padding: 10px;
   margin: -8px
 }
-  
+
+.center {
+  text-align: center;
+}
 </style>
-<p class="hotbar">
-  <a href="index.html">Home Page</a>
-  <a href="acc.html">Accomplishments</a>
-  <a href="cal.html">Calendar</a>
-  <a href="contact-info.html">Contact Info</a>
-  <a href="show.html">2022 Shows</a>
-</p>
+
+<h1 class="center">Here for some information? Well we've got you covered!!</h1>
+
+<div class="block -red edge--both"></div>

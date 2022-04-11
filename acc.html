@@ -1,29 +1,99 @@
+<header>
+    <div class="container">
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="acc.html">Accomplishments</a></li>
+          <li><a href="cal.html">Calender</a></li>
+          <li><a href="contact-info.html">Contact Info</a></li>
+          <li><a href="show.html">2022 Shows</a></li>
+          <li><a href="qna.html">QNA</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
+
 <style>
-a {
-    color:#DD3333;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-.hotbar {
-  background: #D3D3D3;
-  padding: 10px;
-  margin: -8px
-  text: align;
+  body {
+	margin: 0;
+	background: white;
+	font-family: Playfair-Display;
+	font-weight: 800;
+}
+
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+  background: #EF0000;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+body{
+  color:#223388;
+  background:#151515;
 }
   
+nav {
+  float: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 80px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  position: relative;
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #223377;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 200ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
 </style>
-<p class="hotbar">
-  <a href="index.html">Home Page</a>
-  <a href="acc.html">Accomplishments</a>
-  <a href="cal.html">Calendar</a>
-  <a href="contact-info.html">Contact Info</a>
-  <a href="show.html">2022 Shows</a>
-  <a href="qna.html">QnA</a>
-  
-</p>
+
+
+
+
+
 <p>The Adamsville Band is  one of the premier performing marching ensembles in Tennessee, being named Tennessee's Marching Band Champion Twelve Times since 1999.</p>
 <img src="band.webp"></img>
