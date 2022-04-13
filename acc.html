@@ -23,12 +23,23 @@
 	background: white;
 	font-family: Playfair-Display;
 	font-weight: 800;
+    overflow-x: hidden;
 }
+  p {
+    padding:5%;
+    line-height:2;
+  }
 
 
 .container {
 	width: 80%;
 	margin: 0 auto;
+}
+  .box {
+	width: 89%;
+  height: 89%;
+	margin: 0 auto;
+  display:flex;
 }
 
 header {
@@ -41,10 +52,7 @@ header::after {
   clear: both;
 }
 
-body{
-  color:#223388;
-  background:#151515;
-}
+
   
 nav {
   float: center;
@@ -79,7 +87,7 @@ nav a::before {
   content: '';
   display: block;
   height: 5px;
-  background-color: #223377;
+  background-color: #444;
 
   position: absolute;
   top: 0;
@@ -92,11 +100,15 @@ nav a:hover::before {
   width: 100%;
 }
 
+
 </style>
 
 
 
 
-
-<p>The Adamsville Band is  one of the premier performing marching ensembles in Tennessee, being named Tennessee's Marching Band Champion Twelve Times since 1999.</p>
-<img src="band.webp"></img>
+<div class="box">
+<br>
+  <p><br>The Adamsville Band is  one of the premier performing marching ensembles in Tennessee, being named Tennessee's Marching Band Champion Twelve Times since 1999.</p>
+<br>
+  <img src="band.webp" style="width:60%; height:60%;"></img>
+</div>

@@ -18,103 +18,13 @@
 </header>
 
 <style>
-
- @mixin angle($pseudo, $flip: false, $angle: 1.5deg)
-
-  @if $pseudo == 'before' or $pseudo == 'after' or 
-  $pseudo == 'both' {
-    position: relative;
-    z-index: 1;
-    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
-
-  #{$selector} {
-    background: inherit;
-    content: '';
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    -webkit-backface-visibility: hidden;
-
-@if $pseudo == 'before' {
-    #{$selector} {
-      top: 0;
-
-       @if $flip {
-        transform: skewY($angle * -1);
-        transform-origin: 0 0;
-      } 
-      @else {
-         transform: skewY($angle);
-         transform-origin: 100% 0;
-        }
-      }
-    }
-
-@if $pseudo == 'after' {
-      #{$selector} {
-        bottom: 0;
-
-        @if $flip {
-          transform: skewY($angle);
-          transform-origin: 0 100%;
-        } @else {
-          transform: skewY($angle * -1);
-          transform-origin: 100%;
-        }
-      }
-    }
-
-@if $pseudo == 'both' {
-  
-  &:before {
-    top: 0;
-
-  @if $flip {
-    transform: skewY($angle * -1);
-    transform-origin: 0 0;
-    } 
-   @else {
-     transform: skewY($angle);
-     transform-origin: 100% 0;
-        }
-      }
-
-&:after {
-  bottom: 0;
-
-@if $flip {
-  transform: skewY($angle);
-  transform-origin: 0 0;
-  } 
-@else {
-  transform: skewY($angle * -1);
-  transform-origin: 100%;
-        }
-      }
-    }
-  }
-}
-
-.edge--both {
-  @include angle(both);
-}
-
-.-red {
-  background: red;
-}
-
-.block {
-  
-}
   
 body {
 	margin: 0;
 	background: white;
 	font-family: Playfair-Display;
 	font-weight: 800;
+  overflow: hidden;
 }
 
 .container {
@@ -124,7 +34,6 @@ body {
 .questions {
 	width: 80%;
 	margin: 0 auto;
-  border-style: inset;
 }
 header {
   background: #EF0000;
@@ -192,6 +101,11 @@ a {
     text-decoration: none;
   }
   
+  h1 {
+  font-size: 32px;
+  font-weight: 500;
+}
+  
 .hotbar {
   background: #D3D3D3;
   padding: 10px;
@@ -201,22 +115,29 @@ a {
 .center {
   text-align: center;
 }
+
+
+  
 </style>
 
 <h1 class="center">Here for some information? Well we've got you covered!!</h1>
 
-<div class="block -red edge--both"></div>
 <div class="questions">
 <h3>Q. So how much is it for my kid to perform for y'all. </h3>
   <h3>A. Band dues, which expenses change yearly, help pay for our band's equipment, buses, food, and other necessities.</h3>
 <br>
 <h3>Q. Are there ways to support the band?</h3>
 <h3>A. We have many fundraisers around the year, so there will almost certainly be ways to help us. We also take sponsorships, so if you are interested contact Mr. Young or another staff member of the Adamsville Band</h3>
+</div>
   <br>
   <h3>
     Q. Is the imposter sus?
   </h3>
   <h3>
     A. Very much so.
+  </h3>
+  <br>
+  <h3>
+    
   </h3>
 </div>
